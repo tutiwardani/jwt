@@ -47,6 +47,7 @@ def api_login():
 
             token = jwt.encode(token_data, app.config['SECRET_KEY'])
             return jsonify({'token': token.decode('UTF-8')})
+
         return jsonify({'message': 'invalid login'}), 401
 
     except Exception as error:
